@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:orientation="vertical"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="center|top"
+        android:id="@+id/emptyFenceContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:background="@drawable/light_gray_rounded_bg"
+
+            android:id="@+id/removeAd"
+            android:layout_marginTop="@dimen/dim_16"
+            android:layout_marginStart="@dimen/dim_16"
+            android:layout_marginEnd="@dimen/dim_16"
+            android:layout_marginBottom="@dimen/dim_8"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+
+                android:clickable="false"
+                android:layout_marginTop="@dimen/dim_16"
+                android:layout_marginStart="@dimen/dim_16"
+                android:id="@+id/removeAdsImage"
+                android:padding="@dimen/dim_8"
+                android:src="@drawable/advertise"
+                android:layout_width="50dp"
+                android:layout_marginBottom="@dimen/dim_8"
+                android:layout_marginEnd="@dimen/dim_8"
+                android:layout_height="50dp">
+
+            </ImageView>
+
+            <RelativeLayout
+                android:layout_marginStart="@dimen/dim_16"
+                android:layout_below="@id/removeAdsImage"
+                android:layout_marginBottom="@dimen/dim_16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/removeAdsTitle"
+                    android:text="Remove ads"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/f_20"
+                    android:fontFamily="@font/u_extra_bold"
+
+                    android:layout_marginBottom="@dimen/dim_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/removeAdsDesp"
+                    android:layout_below="@id/removeAdsTitle"
+                    android:text="Remove all annoying ads by paying a small amount of a dollar."
+
+                    android:layout_marginEnd="@dimen/dim_16"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/f_16"
+                    android:fontFamily="@font/u_semi_bold"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+            </RelativeLayout>
+            <RelativeLayout
+                android:enabled="false"
+                android:clickable="false"
+                android:layout_alignParentEnd="true"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="@dimen/dim_16"
+                android:layout_marginEnd="@dimen/dim_16"
+                android:layout_marginStart="@dimen/dim_32"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:visibility="gone"
+                    android:id="@+id/removeAdPurchased"
+                    android:src="@drawable/check"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:padding="@dimen/dim_8"
+                    android:layout_marginTop="@dimen/dim_10"
+                    android:background="@drawable/blue_rounded_bg"
+                    app:tint="@color/white">
+
+                </ImageView>
+                <TextView
+
+
+                    android:id="@+id/removeAdsAmount"
+                    android:text="$0.99"
+                    android:background="@drawable/blue_rounded_bg"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/f_16"
+                    android:padding="@dimen/dim_8"
+                    android:fontFamily="@font/u_extra_bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+            </RelativeLayout>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:background="@drawable/light_gray_rounded_bg"
+
+            android:id="@+id/fenceLimit"
+            android:layout_marginTop="@dimen/dim_8"
+            android:layout_marginStart="@dimen/dim_16"
+            android:layout_marginEnd="@dimen/dim_16"
+            android:layout_marginBottom="@dimen/dim_8"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+
+
+                android:layout_marginTop="@dimen/dim_16"
+                android:layout_marginStart="@dimen/dim_16"
+                android:id="@+id/fenceLimitImage"
+                android:padding="@dimen/dim_8"
+                android:src="@drawable/fence_limit"
+                android:clickable="false"
+                android:layout_width="50dp"
+                android:layout_marginBottom="@dimen/dim_8"
+                android:layout_marginEnd="@dimen/dim_8"
+                android:layout_height="50dp">
+
+            </ImageView>
+
+            <RelativeLayout
+                android:layout_marginStart="@dimen/dim_16"
+                android:layout_below="@id/fenceLimitImage"
+                android:layout_marginBottom="@dimen/dim_16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/fenceLimitTitle"
+                    android:text="Fence limit"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/f_20"
+                    android:fontFamily="@font/u_extra_bold"
+
+                    android:layout_marginBottom="@dimen/dim_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/fenceLimitDesp"
+                    android:layout_below="@id/fenceLimitTitle"
+                    android:text="Increase your silent geo fence limit. Buy this package to increase your limit to 30 silent geo fences."
+
+                    android:layout_marginEnd="@dimen/dim_16"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/f_16"
+                    android:fontFamily="@font/u_semi_bold"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+            </RelativeLayout>
+        <RelativeLayout
+            android:enabled="false"
+            android:clickable="false"
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/dim_16"
+            android:layout_marginEnd="@dimen/dim_16"
+            android:layout_marginStart="@dimen/dim_32"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/fenceLimitPurchased"
+                android:src="@drawable/check"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:padding="@dimen/dim_8"
+
+                android:layout_marginTop="@dimen/dim_10"
+                android:background="@drawable/blue_rounded_bg"
+                app:tint="@color/white">
+
+            </ImageView>
+            <TextView
+
+                android:enabled="false"
+                android:clickable="false"
+                android:id="@+id/fenceLimitAmount"
+                android:text="$2.99"
+                android:background="@drawable/blue_rounded_bg"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/f_16"
+                android:padding="@dimen/dim_8"
+                android:fontFamily="@font/u_extra_bold"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </TextView>
+        </RelativeLayout>
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

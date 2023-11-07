@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:orientation="vertical"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:gravity="center|top"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:background="@drawable/light_gray_rounded_bg"
+
+                android:id="@+id/about"
+                android:layout_marginTop="@dimen/dim_16"
+                android:layout_marginStart="@dimen/dim_16"
+                android:layout_marginEnd="@dimen/dim_16"
+                android:layout_marginBottom="@dimen/dim_8"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+                    android:layout_marginTop="@dimen/dim_16"
+                    android:layout_marginStart="@dimen/dim_16"
+                    android:id="@+id/aboutImage"
+                    android:padding="@dimen/dim_8"
+                    android:src="@drawable/about"
+                    android:clickable="false"
+                    android:layout_width="50dp"
+                    android:layout_marginBottom="@dimen/dim_8"
+                    android:layout_marginEnd="@dimen/dim_8"
+
+                    android:layout_height="50dp">
+
+                </ImageView>
+
+                <RelativeLayout
+                    android:layout_marginStart="@dimen/dim_16"
+                    android:layout_below="@id/aboutImage"
+                    android:layout_marginBottom="@dimen/dim_16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/aboutTitle"
+                        android:text="About"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/f_20"
+                        android:fontFamily="@font/u_extra_bold"
+
+                        android:layout_marginBottom="@dimen/dim_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+                    <TextView
+                        android:id="@+id/aboutDesp"
+                        android:layout_below="@id/aboutTitle"
+                        android:text="GeoMute is a cutting-edge mobile application that revolutionizes the way you manage your device's sound settings based on your current location.\n\nImagine walking into a conference room for an important presentation, and your phone automatically switches to silent mode as you enter. GeoMute makes this scenario a reality.\n\nNo need to fumble with your phone's settings or risk disrupting others. GeoMute takes care of it for you, ensuring that you can focus on the task at hand without any interruptions."
+
+                        android:layout_marginEnd="@dimen/dim_16"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/f_16"
+                        android:fontFamily="@font/u_semi_bold"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+                </RelativeLayout>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:background="@drawable/light_gray_rounded_bg"
+
+                android:id="@+id/version"
+                android:layout_marginTop="@dimen/dim_16"
+                android:layout_marginStart="@dimen/dim_16"
+                android:layout_marginEnd="@dimen/dim_16"
+                android:layout_marginBottom="@dimen/dim_8"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+                    android:layout_marginTop="@dimen/dim_16"
+                    android:layout_marginStart="@dimen/dim_16"
+                    android:id="@+id/versionImage"
+                    android:padding="@dimen/dim_8"
+                    android:src="@drawable/version"
+                    android:clickable="false"
+                    android:layout_width="50dp"
+                    android:layout_marginBottom="@dimen/dim_8"
+                    android:layout_marginEnd="@dimen/dim_8"
+
+                    android:layout_height="50dp">
+
+                </ImageView>
+
+                <RelativeLayout
+                    android:layout_marginStart="@dimen/dim_16"
+                    android:layout_below="@id/versionImage"
+                    android:layout_marginBottom="@dimen/dim_16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/versionTitle"
+                        android:text="Version"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/f_20"
+                        android:fontFamily="@font/u_extra_bold"
+
+                        android:layout_marginBottom="@dimen/dim_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+                    <TextView
+                        android:id="@+id/versionDesp"
+                        android:layout_below="@id/versionTitle"
+                        android:text="v1.2"
+
+                        android:layout_marginEnd="@dimen/dim_16"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/f_16"
+                        android:fontFamily="@font/u_semi_bold"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:background="@drawable/light_gray_rounded_bg"
+
+                android:id="@+id/linkedin"
+                android:layout_marginTop="@dimen/dim_16"
+                android:layout_marginStart="@dimen/dim_16"
+                android:layout_marginEnd="@dimen/dim_16"
+                android:layout_marginBottom="@dimen/dim_8"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+                    android:layout_marginTop="@dimen/dim_16"
+                    android:layout_marginStart="@dimen/dim_16"
+                    android:id="@+id/linkedinImage"
+                    android:padding="@dimen/dim_8"
+                    android:src="@drawable/linkedin"
+                    android:clickable="false"
+                    android:layout_width="50dp"
+                    android:layout_marginBottom="@dimen/dim_8"
+                    android:layout_marginEnd="@dimen/dim_8"
+
+                    android:layout_height="50dp">
+
+                </ImageView>
+
+                <RelativeLayout
+                    android:layout_marginStart="@dimen/dim_16"
+                    android:layout_below="@id/linkedinImage"
+                    android:layout_marginBottom="@dimen/dim_16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/linkedinTitle"
+                        android:text="LinkedIn"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/f_20"
+                        android:fontFamily="@font/u_extra_bold"
+
+                        android:layout_marginBottom="@dimen/dim_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+                    <TextView
+                        android:id="@+id/linkedinDesp"
+                        android:layout_below="@id/linkedinTitle"
+                        android:text="For the latest updates and more information, visit our official Linkedin page."
+
+                        android:layout_marginEnd="@dimen/dim_16"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/f_16"
+                        android:fontFamily="@font/u_semi_bold"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+                </RelativeLayout>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:background="@drawable/light_gray_rounded_bg"
+
+                android:id="@+id/facebook"
+                android:layout_marginTop="@dimen/dim_8"
+                android:layout_marginStart="@dimen/dim_16"
+                android:layout_marginEnd="@dimen/dim_16"
+                android:layout_marginBottom="@dimen/dim_8"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+
+                    android:layout_marginTop="@dimen/dim_16"
+                    android:layout_marginStart="@dimen/dim_16"
+                    android:id="@+id/facebookImage"
+                    android:padding="@dimen/dim_8"
+                    android:src="@drawable/facebook"
+                    android:clickable="false"
+                    android:layout_width="50dp"
+                    android:layout_marginBottom="@dimen/dim_8"
+                    android:layout_marginEnd="@dimen/dim_8"
+                    android:layout_height="50dp">
+
+                </ImageView>
+
+                <RelativeLayout
+                    android:layout_marginStart="@dimen/dim_16"
+                    android:layout_below="@id/facebookImage"
+                    android:layout_marginBottom="@dimen/dim_16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/facebookTitle"
+                        android:text="Facebook"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/f_20"
+                        android:fontFamily="@font/u_extra_bold"
+
+                        android:layout_marginBottom="@dimen/dim_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+                    <TextView
+                        android:id="@+id/facebookDesp"
+                        android:layout_below="@id/facebookTitle"
+                        android:text="For the latest updates and more information, visit our official Facebook page."
+
+
+                        android:layout_marginEnd="@dimen/dim_16"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/f_16"
+                        android:fontFamily="@font/u_semi_bold"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

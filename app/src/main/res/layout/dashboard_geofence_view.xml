@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:paddingTop="@dimen/dim_8"
+    android:paddingBottom="@dimen/dim_8"
+    android:background="@drawable/white_rounded_bg"
+
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <TextView
+        android:id="@+id/dgv_name"
+        android:fontFamily="@font/u_extra_bold"
+        android:textSize="@dimen/f_20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </TextView>
+    <RelativeLayout
+        android:layout_marginTop="@dimen/dim_4"
+        android:layout_below="@id/dgv_name"
+        android:id="@+id/dgv_coordinateContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/dgv_lat"
+            android:fontFamily="@font/u_semi_bold"
+            android:textSize="@dimen/f_12"
+            android:textColor="@color/gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+        <TextView
+            android:layout_toRightOf="@id/dgv_lat"
+            android:id="@+id/dgv_long"
+            android:textColor="@color/gray"
+            android:fontFamily="@font/u_semi_bold"
+            android:textSize="@dimen/f_12"
+            android:layout_marginStart="@dimen/dim_8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+    </RelativeLayout>
+    <TextView
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/dgv_tag"
+        android:fontFamily="@font/u_semi_bold"
+        android:textSize="@dimen/f_12"
+        android:textColor="@color/white"
+
+        android:layout_width="wrap_content"
+        android:background="@drawable/blue_rounded_bg"
+        android:padding="@dimen/dim_4"
+        android:layout_height="wrap_content">
+
+    </TextView>
+
+
+</RelativeLayout>

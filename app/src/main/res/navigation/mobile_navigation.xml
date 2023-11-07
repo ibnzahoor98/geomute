@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/dashboard">
+
+    <fragment
+        android:id="@+id/dashboard"
+        android:name="com.ibnzahoor98.geomute.fragment.dashboard.Dashboard"
+        android:label="fragment_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+    <fragment
+        android:id="@+id/auth"
+        android:name="com.ibnzahoor98.geomute.fragment.auth.Auth"
+        android:label="fragment_auth"
+        tools:layout="@layout/fragment_auth" />
+    <fragment
+        android:id="@+id/store"
+        android:name="com.ibnzahoor98.geomute.fragment.store.Store"
+        android:label="Store" />
+    <fragment
+        android:id="@+id/contact"
+        android:name="com.ibnzahoor98.geomute.fragment.contact.Contact"
+        android:label="Contact" />
+    <fragment
+        android:id="@+id/about"
+        android:name="com.ibnzahoor98.geomute.fragment.about.About"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/credits"
+        android:name="com.ibnzahoor98.geomute.fragment.credits.Credits"
+        android:label="Credits" />
+
+</navigation>

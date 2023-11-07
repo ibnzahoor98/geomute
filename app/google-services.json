@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "551430103235",
+    "firebase_url": "https://geo-mute-default-rtdb.firebaseio.com",
+    "project_id": "geo-mute",
+    "storage_bucket": "geo-mute.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:551430103235:android:dcf5efa0f665d56c908276",
+        "android_client_info": {
+          "package_name": "com.ibnzahoor98.geomute"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "551430103235-68nsspb51r8o5co43o25bck35jnfjelc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7zs3Kv7Sk4vAqS9yn1ti6AK2R-H_wBaM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "551430103235-68nsspb51r8o5co43o25bck35jnfjelc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

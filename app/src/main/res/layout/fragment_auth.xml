@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:orientation="vertical"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="center|top"
+        android:layout_marginTop="@dimen/dim_64"
+        android:id="@+id/emptyFenceContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:background="@drawable/light_gray_rounded_bg"
+            android:padding="@dimen/dim_16"
+            android:src="@drawable/user"
+            android:clickable="false"
+            android:layout_width="70dp"
+            android:layout_marginBottom="@dimen/dim_16"
+            android:layout_height="70dp">
+
+        </ImageView>
+
+        <TextView
+            android:text="Connect account"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/f_20"
+            android:fontFamily="@font/u_extra_bold"
+            android:layout_marginStart="@dimen/dim_32"
+            android:layout_marginEnd="@dimen/dim_32"
+
+            android:layout_marginBottom="@dimen/dim_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+        <TextView
+            android:text="In order to save your data, we suggest to link your Google account with Geo Mute. Also you will get 2 more free fences to create."
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/f_16"
+            android:fontFamily="@font/u_semi_bold"
+            android:layout_marginStart="@dimen/dim_16"
+            android:layout_marginEnd="@dimen/dim_16"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/dim_32"
+            android:layout_marginBottom="@dimen/dim_16"
+            android:layout_marginStart="@dimen/dim_16"
+            android:layout_marginEnd="@dimen/dim_16"
+            android:background="@drawable/red_rounded_bg"
+            android:layout_gravity="center"
+            android:id="@+id/connect"
+            android:gravity="center"
+            android:layout_height="60dp">
+            <ImageView
+                android:id="@+id/image"
+                android:src="@drawable/google"
+
+                android:layout_centerVertical="true"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                app:tint="@color/white">
+
+            </ImageView>
+            <TextView
+                android:layout_marginStart="@dimen/dim_8"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/image"
+                android:layout_width="wrap_content"
+                android:text="Connect google account"
+                android:textAllCaps="false"
+                android:textSize="@dimen/f_16"
+                android:textColor="@color/white"
+                android:fontFamily="@font/u_extra_bold"
+                android:layout_height="wrap_content">
+
+            </TextView>
+        </RelativeLayout>
+
+        <RelativeLayout
+
+            android:id="@+id/progressBar"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/dim_32"
+            android:background="@drawable/red_rounded_bg"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_marginBottom="@dimen/dim_16"
+
+            android:layout_height="@dimen/button_height">
+
+            <ProgressBar
+                android:indeterminate="true"
+                android:indeterminateTintMode="src_atop"
+                android:indeterminateTint="@color/white"
+                android:layout_width="20dp"
+                android:layout_height="20dp">
+
+            </ProgressBar>
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

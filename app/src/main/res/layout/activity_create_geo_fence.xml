@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    tools:context=".CreateGeoFence">
+
+    <fragment
+        android:id="@+id/map"
+
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cameraBearing="112.5"
+
+        app:cameraTargetLat="-33.796923"
+        app:cameraTargetLng="150.922433"
+        app:cameraTilt="30"
+        app:cameraZoom="14"
+        app:layout_constraintBottom_toTopOf="@+id/navbar"
+        app:layout_constraintTop_toBottomOf="@+id/navbar"
+        app:liteMode="false"
+        app:mapType="normal"
+        app:uiCompass="false"
+        app:uiRotateGestures="true"
+        app:uiScrollGestures="true"
+        app:uiTiltGestures="true"
+        app:uiZoomControls="true"
+        app:uiZoomGestures="true"
+        tools:context=".CreateGeoFence" />
+
+
+
+    <RelativeLayout
+        android:elevation="@dimen/dim_elevation"
+        android:id="@+id/navbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:paddingStart="@dimen/dim_16"
+        android:paddingEnd="@dimen/dim_16"
+        android:layout_height="60dp">
+
+
+        <TextView
+            android:text="Create"
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/u_extra_bold"
+            android:textSize="@dimen/f_20"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+        <RelativeLayout
+            android:id="@+id/hideShow"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/hideShowValue"
+                android:fontFamily="@font/u_semi_bold"
+                android:textColor="@color/black"
+                android:textSize="@dimen/f_16"
+                android:text="Hide active fences"
+                android:padding="@dimen/dim_8"
+                android:background="@drawable/light_gray_rounded_bg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+    <LinearLayout
+
+        android:visibility="gone"
+        android:id="@+id/successful"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        >
+
+        <ImageView
+            android:id="@+id/successImage"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            >
+
+        </ImageView>
+
+        <TextView
+            android:gravity="center"
+            android:textSize="@dimen/f_16"
+            android:textColor="@color/black"
+            android:fontFamily="@font/u_semi_bold"
+            android:text="Your silent geo fence is created\nsuccessfully."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/navbar"
+        android:layout_width="match_parent"
+        android:background="@color/brand_red"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/info"
+            android:textColor="@color/white"
+            android:textSize="@dimen/f_12"
+            android:fontFamily="@font/u_semi_bold"
+            android:paddingStart="@dimen/f_16"
+            android:paddingEnd="@dimen/dim_16"
+            android:paddingBottom="@dimen/dim_4"
+            android:paddingTop="@dimen/dim_4"
+
+
+            android:text="Long press on map to create silent geo fence"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+    </RelativeLayout>
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/muteModeChangeNotification"
+        android:textColor="@color/white"
+        android:textSize="@dimen/f_12"
+        android:fontFamily="@font/u_semi_bold"
+        android:paddingStart="@dimen/f_16"
+        android:paddingEnd="@dimen/dim_16"
+        android:paddingBottom="@dimen/dim_4"
+        android:paddingTop="@dimen/dim_4"
+
+        android:background="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/createCircleCardView"
+        android:text=""
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </TextView>
+    <androidx.cardview.widget.CardView
+
+        android:visibility="gone"
+        android:id="@+id/createCircleCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:cardElevation="@dimen/dim_elevation"
+        app:cardBackgroundColor="@color/white"
+        >
+        <LinearLayout
+            android:orientation="vertical"
+            android:paddingTop="@dimen/dim_16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:maxLength="25"
+                android:inputType="textCapWords"
+                android:id="@+id/name"
+                android:textColor="@color/black"
+                android:layout_width="match_parent"
+                android:hint="Enter fence name..."
+                android:textColorHint="@color/gray"
+                android:textSize="@dimen/f_16"
+                android:fontFamily="@font/u_semi_bold"
+                android:backgroundTint="@color/gray"
+
+
+                android:layout_marginStart="@dimen/dim_16"
+                android:layout_marginEnd="@dimen/dim_16"
+                android:layout_height="50dp">
+
+            </EditText>
+            <RelativeLayout
+                android:layout_marginTop="@dimen/dim_4"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:gravity="start|center"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:id="@+id/latitude"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/f_12"
+                    android:textColor="@color/gray"
+                    android:fontFamily="@font/u_semi_bold"
+                    android:text="1932idjskd"
+                    android:layout_marginStart="@dimen/dim_16"
+                    >
+
+                </TextView>
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/latitude"
+                    android:id="@+id/longitude"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/f_12"
+                    android:textColor="@color/gray"
+                    android:fontFamily="@font/u_semi_bold"
+                    android:text="dslakmdas"
+                    android:layout_marginStart="@dimen/dim_8"
+                    android:layout_marginEnd="@dimen/dim_16"
+                    >
+
+                </TextView>
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/donotDisturb"-->
+<!--                    android:layout_toLeftOf="@id/vibrate"-->
+<!--                    android:layout_marginEnd="@dimen/dim_8"-->
+<!--                    android:src="@drawable/silent"-->
+<!--                    android:layout_width="30dp"-->
+<!--                    android:background="@drawable/light_gray_rounded_bg"-->
+<!--                    android:layout_height="30dp"-->
+<!--                    android:padding="@dimen/dim_6"-->
+<!--                    app:tint="@color/black">-->
+
+<!--                </ImageView>-->
+<!--                <ImageView-->
+<!--                    android:id="@+id/vibrate"-->
+<!--                    android:layout_marginEnd="@dimen/dim_16"-->
+<!--                    android:layout_alignParentEnd="true"-->
+<!--                    android:src="@drawable/vibration"-->
+<!--                    android:layout_width="30dp"-->
+<!--                    android:background="@drawable/light_gray_rounded_bg"-->
+<!--                    android:layout_height="30dp"-->
+<!--                    android:padding="@dimen/dim_6"-->
+<!--                    app:tint="@color/black">-->
+
+<!--                </ImageView>-->
+
+            </RelativeLayout>
+
+
+            <HorizontalScrollView
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginStart="@dimen/dim_16"
+                android:layout_marginEnd="@dimen/dim_16"
+                android:layout_marginTop="@dimen/dim_16"
+                android:scrollbars="none"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:textSize="@dimen/f_12"
+                        android:textColor="@color/black"
+                        android:text="Church"
+                        android:background="@drawable/light_gray_rounded_bg"
+                        android:padding="@dimen/dim_8"
+                        android:fontFamily="@font/u_semi_bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tag1"
+
+                        >
+
+                    </TextView>
+                    <TextView
+                        android:layout_marginStart="@dimen/dim_8"
+                        android:textSize="@dimen/f_12"
+                        android:textColor="@color/black"
+                        android:text="Mosque"
+                        android:background="@drawable/light_gray_rounded_bg"
+                        android:padding="@dimen/dim_8"
+                        android:fontFamily="@font/u_semi_bold"
+                        android:layout_width="wrap_content"
+                        android:id="@+id/tag2"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+                    <TextView
+                        android:layout_marginStart="@dimen/dim_8"
+                        android:textSize="@dimen/f_12"
+                        android:textColor="@color/black"
+                        android:text="Temple"
+                        android:background="@drawable/light_gray_rounded_bg"
+                        android:padding="@dimen/dim_8"
+                        android:fontFamily="@font/u_semi_bold"
+                        android:layout_width="wrap_content"
+                        android:id="@+id/tag3"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+                    <TextView
+                        android:layout_marginStart="@dimen/dim_8"
+                        android:textSize="@dimen/f_12"
+                        android:textColor="@color/black"
+                        android:text="Synagogue"
+                        android:background="@drawable/light_gray_rounded_bg"
+                        android:padding="@dimen/dim_8"
+                        android:fontFamily="@font/u_semi_bold"
+                        android:layout_width="wrap_content"
+                        android:id="@+id/tag4"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+
+
+
+
+
+
+                    <TextView
+                        android:layout_marginStart="@dimen/dim_8"
+                        android:textSize="@dimen/f_12"
+                        android:textColor="@color/black"
+                        android:text="Restaurant"
+                        android:background="@drawable/light_gray_rounded_bg"
+                        android:padding="@dimen/dim_8"
+                        android:fontFamily="@font/u_semi_bold"
+                        android:layout_width="wrap_content"
+                        android:id="@+id/tag5"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+                    <TextView
+                        android:layout_marginStart="@dimen/dim_8"
+                        android:textSize="@dimen/f_12"
+                        android:textColor="@color/black"
+                        android:text="Conference"
+                        android:background="@drawable/light_gray_rounded_bg"
+                        android:padding="@dimen/dim_8"
+                        android:fontFamily="@font/u_semi_bold"
+                        android:layout_width="wrap_content"
+                        android:id="@+id/tag6"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+                    <TextView
+                        android:layout_marginStart="@dimen/dim_8"
+                        android:textSize="@dimen/f_12"
+                        android:textColor="@color/black"
+                        android:text="Library"
+                        android:background="@drawable/light_gray_rounded_bg"
+                        android:padding="@dimen/dim_8"
+                        android:fontFamily="@font/u_semi_bold"
+                        android:layout_width="wrap_content"
+                        android:id="@+id/tag7"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+                    <TextView
+                        android:layout_marginStart="@dimen/dim_8"
+                        android:textSize="@dimen/f_12"
+                        android:textColor="@color/black"
+                        android:text="Hospital"
+                        android:background="@drawable/light_gray_rounded_bg"
+                        android:padding="@dimen/dim_8"
+                        android:fontFamily="@font/u_semi_bold"
+                        android:layout_width="wrap_content"
+                        android:id="@+id/tag8"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+                    <TextView
+                        android:layout_marginStart="@dimen/dim_8"
+                        android:textSize="@dimen/f_12"
+                        android:textColor="@color/black"
+                        android:text="Museum"
+                        android:background="@drawable/light_gray_rounded_bg"
+                        android:padding="@dimen/dim_8"
+                        android:fontFamily="@font/u_semi_bold"
+                        android:layout_width="wrap_content"
+                        android:id="@+id/tag9"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+                    <TextView
+                        android:layout_marginStart="@dimen/dim_8"
+                        android:textSize="@dimen/f_12"
+                        android:textColor="@color/black"
+                        android:text="Workplace"
+                        android:background="@drawable/light_gray_rounded_bg"
+                        android:padding="@dimen/dim_8"
+                        android:fontFamily="@font/u_semi_bold"
+                        android:layout_width="wrap_content"
+                        android:id="@+id/tag10"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+                    <TextView
+                        android:layout_marginStart="@dimen/dim_8"
+                        android:textSize="@dimen/f_12"
+                        android:textColor="@color/black"
+                        android:text="Court"
+                        android:background="@drawable/light_gray_rounded_bg"
+                        android:padding="@dimen/dim_8"
+                        android:fontFamily="@font/u_semi_bold"
+                        android:layout_width="wrap_content"
+                        android:id="@+id/tag11"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+                    <TextView
+                    android:layout_marginStart="@dimen/dim_8"
+                    android:textSize="@dimen/f_12"
+                    android:textColor="@color/black"
+                    android:text="Office"
+                    android:background="@drawable/light_gray_rounded_bg"
+                    android:padding="@dimen/dim_8"
+                    android:fontFamily="@font/u_semi_bold"
+                    android:layout_width="wrap_content"
+                        android:id="@+id/tag12"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+                    <TextView
+                        android:layout_marginStart="@dimen/dim_8"
+                        android:textSize="@dimen/f_12"
+                        android:textColor="@color/black"
+                        android:text="Other"
+                        android:background="@drawable/light_gray_rounded_bg"
+                        android:padding="@dimen/dim_8"
+                        android:fontFamily="@font/u_semi_bold"
+                        android:layout_width="wrap_content"
+                        android:id="@+id/tag13"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <hearsilent.discreteslider.DiscreteSlider
+                android:id="@+id/discreteSlider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                app:ds_inactiveTrackColor="@color/light_gray"
+                app:ds_maxProgress="2000"
+                app:ds_minProgress="100"
+                app:ds_mode="normal"
+                app:ds_tickMarkStep="1"
+                app:ds_thumbColor="@color/brand_blue"
+                app:ds_thumbPressedColor="#33F2F1F1"
+                app:ds_thumbRadius="4dp"
+                android:paddingTop="@dimen/dim_32"
+                android:paddingStart="@dimen/dim_16"
+                android:paddingEnd="@dimen/dim_16"
+                app:ds_count="500"
+                app:ds_progressOffset="1"
+                app:ds_tickMarkColor="@color/brand_blue"
+                app:ds_tickMarkDashLength="1dp"
+                app:ds_tickMarkInactiveColor="@color/light_gray"
+                app:ds_tickMarkPatterns="dot"
+                app:ds_trackColor="@color/brand_blue"
+                app:ds_trackWidth="4dp"
+
+                app:ds_valueLabelMode="showOnPressHold"
+                app:ds_valueLabelTextColor="@color/white"
+                app:ds_valueLabelTextSize="@dimen/f_8"
+                app:ds_valueLabelDuration="100"
+                />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/f_12"
+                    android:layout_marginTop="@dimen/dim_4"
+                    android:textColor="@color/gray"
+                    android:fontFamily="@font/u_semi_bold"
+                    android:text="Move slider to select radius"
+                    android:layout_marginStart="@dimen/dim_16"
+                    android:layout_marginEnd="@dimen/dim_16"
+                    >
+
+                </TextView>
+                <TextView
+                    android:id="@+id/diameter"
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/f_16"
+                    android:layout_marginTop="@dimen/dim_4"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/u_semi_bold"
+                    android:text="Diameter: 100 m"
+                    android:layout_marginStart="@dimen/dim_16"
+                    android:layout_marginEnd="@dimen/dim_16"
+                    >
+
+                </TextView>
+            </RelativeLayout>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/create"
+                android:layout_marginStart="@dimen/dim_16"
+                android:layout_marginEnd="@dimen/dim_16"
+                android:layout_marginTop="@dimen/dim_16"
+                android:layout_marginBottom="@dimen/dim_16"
+                android:layout_width="match_parent"
+                android:text="Create silent geo fence"
+                android:textAllCaps="false"
+                android:textSize="@dimen/f_16"
+                android:textColor="@color/white"
+                android:fontFamily="@font/u_extra_bold"
+                android:background="@drawable/blue_rounded_bg"
+                android:layout_height="@dimen/button_height">
+
+            </androidx.appcompat.widget.AppCompatButton>
+            <RelativeLayout
+                android:id="@+id/progressBar"
+                android:visibility="gone"
+                android:layout_marginStart="@dimen/dim_16"
+                android:layout_marginEnd="@dimen/dim_16"
+                android:layout_marginTop="@dimen/dim_16"
+                android:background="@drawable/blue_rounded_bg"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_marginBottom="@dimen/dim_16"
+
+                android:layout_height="@dimen/button_height">
+
+                <ProgressBar
+                    android:indeterminate="true"
+                    android:indeterminateTintMode="src_atop"
+                    android:indeterminateTint="@color/white"
+                     android:layout_width="20dp"
+                    android:layout_height="20dp">
+
+                </ProgressBar>
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

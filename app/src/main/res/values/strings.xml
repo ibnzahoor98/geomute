@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Geo Mute</string>
+    <string name="title_activity_create_geo_fence">CreateGeoFence</string>
+
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="your_web_client_id">551430103235-68nsspb51r8o5co43o25bck35jnfjelc.apps.googleusercontent.com</string>
+
+    <string name="ad_dummy">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="ad_dashboard">ca-app-pub-3450484328841499/7356669318</string>
+    <string name="ad_navheader">ca-app-pub-3450484328841499/8921086328</string>
+
+</resources>

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:orientation="vertical"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="center|top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:background="@drawable/light_gray_rounded_bg"
+
+            android:id="@+id/whatsapp"
+            android:layout_marginTop="@dimen/dim_16"
+            android:layout_marginStart="@dimen/dim_16"
+            android:layout_marginEnd="@dimen/dim_16"
+            android:layout_marginBottom="@dimen/dim_8"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:layout_marginTop="@dimen/dim_16"
+                android:layout_marginStart="@dimen/dim_16"
+                android:id="@+id/whatsappImage"
+                android:padding="@dimen/dim_8"
+                android:src="@drawable/whatsapp"
+                android:clickable="false"
+                android:layout_width="50dp"
+                android:layout_marginBottom="@dimen/dim_8"
+                android:layout_marginEnd="@dimen/dim_8"
+
+                android:layout_height="50dp">
+
+            </ImageView>
+
+            <RelativeLayout
+                android:layout_marginStart="@dimen/dim_16"
+                android:layout_below="@id/whatsappImage"
+                android:layout_marginBottom="@dimen/dim_16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/whatsappTitle"
+                    android:text="Whatsapp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/f_20"
+                    android:fontFamily="@font/u_extra_bold"
+
+                    android:layout_marginBottom="@dimen/dim_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/whatsappDesp"
+                    android:layout_below="@id/whatsappTitle"
+                    android:text="Whatsapp us anytime if you have any query."
+
+                    android:layout_marginEnd="@dimen/dim_16"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/f_16"
+                    android:fontFamily="@font/u_semi_bold"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+            </RelativeLayout>
+            <TextView
+
+                android:clickable="false"
+                android:enabled="false"
+                android:layout_marginTop="@dimen/dim_16"
+                android:layout_marginEnd="@dimen/dim_16"
+                android:id="@+id/whatsappAmount"
+                android:layout_alignParentEnd="true"
+                android:text="+92 349 801 5319"
+                android:background="@drawable/black_rounded_bg"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/f_16"
+                android:padding="@dimen/dim_8"
+                android:fontFamily="@font/u_extra_bold"
+                android:layout_marginStart="@dimen/dim_32"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </TextView>
+        </RelativeLayout>
+        <RelativeLayout
+            android:background="@drawable/light_gray_rounded_bg"
+
+            android:id="@+id/email"
+            android:layout_marginTop="@dimen/dim_8"
+            android:layout_marginStart="@dimen/dim_16"
+            android:layout_marginEnd="@dimen/dim_16"
+            android:layout_marginBottom="@dimen/dim_8"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+
+                android:layout_marginTop="@dimen/dim_16"
+                android:layout_marginStart="@dimen/dim_16"
+                android:id="@+id/emailImage"
+                android:padding="@dimen/dim_8"
+                android:src="@drawable/email"
+                android:clickable="false"
+                android:layout_width="50dp"
+                android:layout_marginBottom="@dimen/dim_8"
+                android:layout_marginEnd="@dimen/dim_8"
+                android:layout_height="50dp">
+
+            </ImageView>
+
+            <RelativeLayout
+                android:layout_marginStart="@dimen/dim_16"
+                android:layout_below="@id/emailImage"
+                android:layout_marginBottom="@dimen/dim_16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/emailTitle"
+                    android:text="Email"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/f_20"
+                    android:fontFamily="@font/u_extra_bold"
+
+                    android:layout_marginBottom="@dimen/dim_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/emailDesp"
+                    android:layout_below="@id/emailTitle"
+                    android:text="Email us with your query and we will get back to you as soon as possible."
+
+
+                    android:layout_marginEnd="@dimen/dim_16"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/f_16"
+                    android:fontFamily="@font/u_semi_bold"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+            </RelativeLayout>
+
+            <TextView
+
+                android:enabled="false"
+                android:id="@+id/emailAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/dim_32"
+                android:layout_marginTop="@dimen/dim_16"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/black_rounded_bg"
+                android:clickable="false"
+                android:fontFamily="@font/u_extra_bold"
+                android:gravity="center"
+                android:padding="@dimen/dim_8"
+                android:text="Saad Zahoor"
+
+                android:textColor="@color/white"
+                android:textSize="@dimen/f_16">
+
+            </TextView>
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

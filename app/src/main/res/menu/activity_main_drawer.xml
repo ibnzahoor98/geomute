@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText">
+
+    <group android:id="@+id/sorting1" >
+
+
+    <item
+
+        android:id="@+id/nav_dashbaord"
+        android:title="Dashboard"
+        android:icon="@drawable/dashboards"
+        />
+
+    <item
+        android:id="@+id/nav_login_register"
+        android:title="Login / Register"
+
+        android:icon="@drawable/user"
+        />
+
+
+    <item
+        android:id="@+id/nav_store"
+        android:title="Store"
+
+        android:icon="@drawable/store"
+        />
+    </group>
+    <group android:id="@+id/sorting2" >
+
+    <item
+        android:id="@+id/nav_review"
+        android:title="Review"
+
+        android:icon="@drawable/star"
+        />
+    <item
+        android:id="@+id/nav_contact"
+        android:title="Contact"
+
+        android:icon="@drawable/phone"
+        />
+    <item
+        android:id="@+id/nav_about"
+        android:title="About"
+
+        android:icon="@drawable/about"
+        />
+    <item
+        android:id="@+id/nav_credits"
+        android:title="Credits"
+
+        android:icon="@drawable/credits"
+        />
+    </group>
+
+</menu>
