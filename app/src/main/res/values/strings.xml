@@ -10,8 +10,14 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="your_web_client_id">551430103235-68nsspb51r8o5co43o25bck35jnfjelc.apps.googleusercontent.com</string>
 
-    <string name="ad_dummy">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="ad_dashboard">ca-app-pub-3450484328841499/7356669318</string>
-    <string name="ad_navheader">ca-app-pub-3450484328841499/8921086328</string>
+    <string name="ad_banner_test">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="ad_main">ca-app-pub-3450484328841499/7356669318</string>
+    <string name="ad_nav_header">ca-app-pub-3450484328841499/8921086328</string>
+    <string name="ad_create_geo_fence">ca-app-pub-3450484328841499/5128470532</string>
+    <string name="ad_fence_detail_view">ca-app-pub-3450484328841499/7966386864</string>
+
+    <string name="ad_app_open_test">ca-app-pub-3940256099942544/3419835294</string>
+    <string name="ad_app_open">ca-app-pub-3450484328841499/6374065601</string>
+
 
 </resources>

@@ -28,6 +28,7 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.core.widget.ImageViewCompat
 import com.bumptech.glide.Glide
 import com.google.android.gms.ads.AdError
+import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.FullScreenContentCallback
 import com.google.android.gms.ads.LoadAdError
@@ -59,6 +60,7 @@ import com.google.firebase.firestore.firestore
 import com.ibnzahoor98.geomute.data.UploadData
 import com.ibnzahoor98.geomute.databinding.ActivityCreateGeoFenceBinding
 import com.ibnzahoor98.geomute.fragment.dashboard.Dashboard
+import com.ibnzahoor98.geomute.helper.Ads
 import com.ibnzahoor98.geomute.helper.CustomTypefaceSpan
 import com.ibnzahoor98.geomute.helper.GenerateID
 import com.ibnzahoor98.geomute.helper.Notification
@@ -122,9 +124,52 @@ class CreateGeoFence : AppCompatActivity(), OnMapReadyCallback, OnMapLongClickLi
        // defaultMuteMode()
         defaultTagMod()
         spotlight()
+        if ( Dashboard.STORE_CIRCLES.size < 1)
+        {
+            binding.hideShow.visibility= View.GONE
+        }
+
+        if (!SharedPrefs.isAdRemoved(this))
+        {
+
+            binding.adViewCreateGeoFence.visibility = View.VISIBLE
+            Ads.requestMainActivityAd(binding.adViewCreateGeoFence, this)
+            adCreateGeoFenceActivityListener()
+        }
+
+    }
+    fun adCreateGeoFenceActivityListener(){
+        binding.adViewCreateGeoFence.adListener = object: AdListener() {
+            override fun onAdClicked() {
+                // Code to be executed when the user clicks on an ad.
+            }
+
+            override fun onAdClosed() {
+                // Code to be executed when the user is about to return
+                // to the app after tapping on an ad.
+            }
+
+            override fun onAdFailedToLoad(adError : LoadAdError) {
+                // Code to be executed when an ad request fails.
+            }
+
+            override fun onAdImpression() {
+                // Code to be executed when an impression is recorded
+                // for an ad.
+            }
+
+            override fun onAdLoaded() {
+                // Code to be executed when an ad finishes loading.
+            }
+
+            override fun onAdOpened() {
+                // Code to be executed when an ad opens an overlay that
+                // covers the screen.
+            }
+        }
     }
     fun spotlight(){
-        object : CountDownTimer(1500, Constants.INTERVAL){
+        object : CountDownTimer(1000, Constants.INTERVAL){
             override fun onTick(p0: Long) {
             }
 
@@ -140,7 +185,7 @@ class CreateGeoFence : AppCompatActivity(), OnMapReadyCallback, OnMapLongClickLi
                     .headingTvText("Long Press")
                     .subHeadingTvColor(Color.parseColor("#ffffff"))
                     .subHeadingTvSize(16)
-                    .subHeadingTvText("Long press on map to create silent geo fence.")
+                    .subHeadingTvText("Long press on map to create a quiet location area.")
                     .maskColor(Color.parseColor("#dc000000"))
                     .target(binding.info)
                     .lineAnimDuration(200)
@@ -148,9 +193,22 @@ class CreateGeoFence : AppCompatActivity(), OnMapReadyCallback, OnMapLongClickLi
                     .dismissOnTouch(true)
                     .dismissOnBackPress(true)
                     .enableDismissAfterShown(true)
-                    .usageId("59") //UNIQUE ID
+                    .usageId("590") //UNIQUE ID
                     .setTypeface(ResourcesCompat.getFont(applicationContext, R.font.u_semi_bold))
                     .targetPadding(300)
+                    .setListener {
+
+                        object : CountDownTimer(1000, Constants.INTERVAL){
+                            override fun onTick(p0: Long) {
+                            }
+
+                            override fun onFinish() {
+
+
+                            }
+
+                        }.start();
+                    }
 
                     .show()
             }
@@ -166,7 +224,7 @@ class CreateGeoFence : AppCompatActivity(), OnMapReadyCallback, OnMapLongClickLi
         mMap = googleMap
         displayAlreadyCreatedCircles()
         mMap.setOnMapLongClickListener(this)
-
+        mMap.getUiSettings().setMyLocationButtonEnabled(true);
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) !=
@@ -182,6 +240,7 @@ class CreateGeoFence : AppCompatActivity(), OnMapReadyCallback, OnMapLongClickLi
             return
         }
 
+        mMap.setMyLocationEnabled(true);
         fusedLocationClient.lastLocation
             .addOnSuccessListener { location : Location ->
 
@@ -244,6 +303,29 @@ class CreateGeoFence : AppCompatActivity(), OnMapReadyCallback, OnMapLongClickLi
     }
 
     override fun onMapLongClick(p0: LatLng) {
+
+        SpotlightView.Builder(this@CreateGeoFence)
+            .introAnimationDuration(400)
+            .enableRevealAnimation(false)
+            .performClick(true)
+            .fadeinTextDuration(400)
+            .headingTvColor(Color.parseColor("#ffffff"))
+            .headingTvSize(32)
+            .headingTvText("Options")
+            .subHeadingTvColor(Color.parseColor("#ffffff"))
+            .subHeadingTvSize(16)
+            .subHeadingTvText("You can set name, tag and radius for your quite location area.")
+            .maskColor(Color.parseColor("#dc000000"))
+            .target(binding.createCircleCardView)
+            .lineAnimDuration(400)
+            .lineAndArcColor(Color.parseColor("#ffffff"))
+            .dismissOnTouch(true)
+            .dismissOnBackPress(true)
+            .enableDismissAfterShown(true)
+            .usageId("59909") //UNIQUE ID
+            .setTypeface(ResourcesCompat.getFont(applicationContext, R.font.u_semi_bold))
+            .targetPadding(150)
+            .show()
 
         mMap.clear()
 

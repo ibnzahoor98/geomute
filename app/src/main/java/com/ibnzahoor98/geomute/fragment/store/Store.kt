@@ -1,12 +1,15 @@
 package com.ibnzahoor98.geomute.fragment.store
 
+import android.graphics.Color
 import android.os.Bundle
 import android.provider.Settings
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.android.billingclient.api.BillingClient
 import com.android.billingclient.api.BillingClientStateListener
@@ -61,8 +64,6 @@ class Store : Fragment(), View.OnClickListener{
         initBilling()
         initialPaymentChecks()
 
-
-
         return binding.root
     }
 
@@ -78,8 +79,7 @@ class Store : Fragment(), View.OnClickListener{
 
         }
         val FENCE_LIMIT = SharedPrefs.getBasicInfoSharedPref(requireContext()).getInt(SharedPrefs.SHARED_PREF_FENCE_LIMIT, 0)
-        Toast.makeText(requireContext(), "F:" + FENCE_LIMIT , Toast.LENGTH_SHORT).show()
-        if (FENCE_LIMIT > 29){
+         if (FENCE_LIMIT > 29){
             binding.fenceLimitPurchased.visibility = View.VISIBLE;
             binding.fenceLimitAmount.visibility = View.GONE
             binding.fenceLimit.isEnabled = false
@@ -96,7 +96,6 @@ class Store : Fragment(), View.OnClickListener{
                 for (purchase in purchases) {
                     Log.i("dev", "successful purchase...")
 
-                    Toast.makeText(requireContext(), "Err", Toast.LENGTH_SHORT).show()
                     val purchaseToken = purchase.purchaseToken
                     Log.i("dev", "successful purchase..." + purchase.orderId.toString())
                     Log.i("dev", "successful purchase..." + purchase.signature.toString())
@@ -121,29 +120,17 @@ class Store : Fragment(), View.OnClickListener{
                 }
             } else if (billingResult.responseCode == BillingClient.BillingResponseCode.USER_CANCELED) {
 
-                val snackbar = Snackbar
-                    .make(binding.root, "Message is deleted", Snackbar.LENGTH_LONG)
-                    .setAction("UNDO") {
-                        val snackbar1 = Snackbar.make(
-                            binding.root,
-                            "Message is restored!",
-                            Snackbar.LENGTH_SHORT
-                        )
-                        snackbar1.show()
-                    }
 
-                snackbar.show()
-
-                Toast.makeText(requireContext(), "Purchase canceled", Toast.LENGTH_SHORT).show()
+               // Toast.makeText(requireContext(), "Purchase canceled", Toast.LENGTH_SHORT).show()
             } else if (billingResult.responseCode == BillingClient.BillingResponseCode.ITEM_ALREADY_OWNED) {
 
-                Toast.makeText(requireContext(), "Already bought", Toast.LENGTH_SHORT).show()
+               // Toast.makeText(requireContext(), "Already bought", Toast.LENGTH_SHORT).show()
             } else if (billingResult.responseCode == BillingClient.BillingResponseCode.FEATURE_NOT_SUPPORTED) {
 
-                Toast.makeText(requireContext(), "Erro: FEATURE_NOT_SUPPORTED", Toast.LENGTH_SHORT).show()
+               // Toast.makeText(requireContext(), "Erro: FEATURE_NOT_SUPPORTED", Toast.LENGTH_SHORT).show()
             } else {
 
-                Toast.makeText(requireContext(), "Erro: ${billingResult.debugMessage}", Toast.LENGTH_SHORT).show()
+              //  Toast.makeText(requireContext(), "Erro: ${billingResult.debugMessage}", Toast.LENGTH_SHORT).show()
              }
 
         }

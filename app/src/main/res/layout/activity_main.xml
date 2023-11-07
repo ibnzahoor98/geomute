@@ -128,7 +128,7 @@
                 android:layout_alignParentBottom="true"
                 ads:adSize="BANNER"
                 android:visibility="gone"
-                ads:adUnitId="@string/ad_dummy">
+                ads:adUnitId="@string/ad_banner_test">
             </com.google.android.gms.ads.AdView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

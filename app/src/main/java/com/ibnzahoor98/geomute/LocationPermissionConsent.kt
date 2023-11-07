@@ -156,6 +156,7 @@ class LocationPermissionConsent : AppCompatActivity() {
                     ) {
 
 
+                        finish()
                     }
                 } else {
 

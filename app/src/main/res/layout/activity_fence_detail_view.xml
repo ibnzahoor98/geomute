@@ -4,8 +4,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:ads="http://schemas.android.com/tools"
     android:background="@color/white"
-    android:id="@+id/container" >
+    android:id="@+id/container">
     <RelativeLayout
         android:elevation="@dimen/dim_elevation"
         android:id="@+id/navbar"
@@ -32,21 +33,35 @@
         </TextView>
 
     </RelativeLayout>
+
     <androidx.core.widget.NestedScrollView
         android:scrollbars="none"
         android:layout_marginTop="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+            <com.google.android.gms.ads.AdView
+
+                android:visibility="gone"
+                android:id="@+id/adViewDetailFenceView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                ads:adSize="BANNER"
+                ads:adUnitId="@string/ad_banner_test">
+            </com.google.android.gms.ads.AdView>
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardMapView"
                 android:layout_width="match_parent"
                 app:cardCornerRadius="@dimen/roundness"
                 android:layout_margin="@dimen/dim_16"
                 android:layout_height="300dp">
+
                 <fragment
 
 

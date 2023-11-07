@@ -25,7 +25,7 @@
 
     <dimen name="logo_height">40dp</dimen>
     <dimen name="button_height">60dp</dimen>
-    <dimen name="roundness">32dp</dimen>
+    <dimen name="roundness">8dp</dimen>
 
     <dimen name="dim_elevation">4dp</dimen>
     <!-- Default screen margins, per the Android Design guidelines. -->

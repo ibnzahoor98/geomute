@@ -15,8 +15,8 @@ android {
         applicationId = "com.ibnzahoor98.geomute"
         minSdk = 24
         targetSdk = 34
-        versionCode = 4
-        versionName = "1.3"
+        versionCode = 5
+        versionName = "1.4"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
@@ -87,10 +87,16 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.5")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.5")
 
+
     val billing_version = "6.0.1"
     implementation("com.android.billingclient:billing-ktx:$billing_version")
   //  implementation("com.google.android.play:core:1.10.3")
     implementation("com.github.wooplr:Spotlight:1.2.3")
+
+    val lifecycle_version = "2.3.1"
+    implementation("androidx.lifecycle:lifecycle-extensions:2.0.0-alpha1")
+    implementation("androidx.lifecycle:lifecycle-runtime:$lifecycle_version")
+    annotationProcessor("androidx.lifecycle:lifecycle-compiler:$lifecycle_version")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

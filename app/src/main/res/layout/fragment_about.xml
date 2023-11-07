@@ -134,7 +134,7 @@
                     <TextView
                         android:id="@+id/versionDesp"
                         android:layout_below="@id/versionTitle"
-                        android:text="v1.2"
+                        android:text="v1.4"
 
                         android:layout_marginEnd="@dimen/dim_16"
                         android:textColor="@color/black"

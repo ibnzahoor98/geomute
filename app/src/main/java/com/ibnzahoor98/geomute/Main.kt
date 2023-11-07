@@ -108,11 +108,65 @@ class Main : AppCompatActivity(), View.OnClickListener {
 
     fun spotlight(){
 
-        SpotlightSequence.getInstance(this@Main,Spotlight.init(this))
-            .addSpotlight(binding.hideShow, "Geo Fence Info", "Indicates total number of silent geo fences you can create and how many you have created.", "9292")
-            .addSpotlight(binding.hamburger, "Navigation Menu", "Click to access navigation menu section.", "9192")
 
-            .startSequence();
+        SpotlightView.Builder(this@Main)
+            .introAnimationDuration(400)
+            .enableRevealAnimation(false)
+            .performClick(true)
+            .fadeinTextDuration(400)
+            .headingTvColor(Color.parseColor("#ffffff"))
+            .headingTvSize(32)
+            .headingTvText("Geo Fence Info")
+            .subHeadingTvColor(Color.parseColor("#ffffff"))
+            .subHeadingTvSize(16)
+            .subHeadingTvText("Indicates total number of silent geo fences you can create and how many you have created.")
+            .maskColor(Color.parseColor("#dc000000"))
+            .target(binding.hideShow)
+            .lineAnimDuration(400)
+            .lineAndArcColor(Color.parseColor("#ffffff"))
+            .dismissOnTouch(true)
+            .dismissOnBackPress(true)
+            .enableDismissAfterShown(true)
+            .usageId("529909") //UNIQUE ID
+            .setTypeface(ResourcesCompat.getFont(applicationContext, R.font.u_semi_bold))
+
+            .setListener {
+
+                SpotlightView.Builder(this@Main)
+                    .introAnimationDuration(400)
+                    .enableRevealAnimation(false)
+                    .performClick(true)
+                    .fadeinTextDuration(400)
+                    .headingTvColor(Color.parseColor("#ffffff"))
+                    .headingTvSize(32)
+                    .headingTvText("Navigation Menu")
+                    .subHeadingTvColor(Color.parseColor("#ffffff"))
+                    .subHeadingTvSize(16)
+                    .subHeadingTvText("Click to access navigation menu section.")
+                    .maskColor(Color.parseColor("#dc000000"))
+                    .target(binding.hamburger)
+                    .lineAnimDuration(400)
+                    .lineAndArcColor(Color.parseColor("#ffffff"))
+                    .dismissOnTouch(true)
+                    .dismissOnBackPress(true)
+                    .enableDismissAfterShown(true)
+                    .usageId("599049") //UNIQUE ID
+                    .setTypeface(ResourcesCompat.getFont(applicationContext, R.font.u_semi_bold))
+
+                    .setListener {
+
+                    }
+                    .show()
+
+            }
+            .show()
+
+
+//        SpotlightSequence.getInstance(this@Main,Spotlight.init(this))
+//            .addSpotlight(binding.hideShow, "Geo Fence Info", "Indicates total number of silent geo fences you can create and how many you have created.", "9292")
+//            .addSpotlight(binding.hamburger, "Navigation Menu", "Click to access navigation menu section.", "9192")
+//
+//            .startSequence();
 
 
     }
@@ -250,11 +304,7 @@ class Main : AppCompatActivity(), View.OnClickListener {
                     binding.fencesLimitValue.text = "Credits"
                 }
             }
-            Toast.makeText(
-                applicationContext,
-                menuItem.title.toString() + " Selected",
-                Toast.LENGTH_SHORT
-            ).show()
+
             closeDrawer()
             true
         }

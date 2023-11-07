@@ -34,7 +34,7 @@
         </ImageView>
 
         <TextView
-            android:text="You have not created any silent geo fence. Please click on bottom right button to create."
+            android:text="You have not created any quiet location area. Please click on bottom right button to create."
             android:gravity="center"
             android:textColor="@color/black"
             android:textSize="@dimen/f_16"

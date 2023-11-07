@@ -103,8 +103,8 @@ class Splash : AppCompatActivity() {
                 .addOnSuccessListener { documentReference ->
                     if (documentReference.exists())
                     {
+                        val fenceLimit = documentReference.data?.get("fenceLimit");
                         val isAdRemoved = documentReference.data?.get("isAdRemoved");
-                        val fenceLimit = documentReference.data?.get("fenceLimit")
 
 
                             try{

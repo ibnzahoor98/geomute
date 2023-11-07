@@ -58,7 +58,7 @@
             android:layout_centerHorizontal="true"
             ads:adSize="BANNER"
             android:layout_marginBottom="@dimen/dim_16"
-            ads:adUnitId="@string/ad_dummy">
+            ads:adUnitId="@string/ad_banner_test">
         </com.google.android.gms.ads.AdView>
     </LinearLayout>
 

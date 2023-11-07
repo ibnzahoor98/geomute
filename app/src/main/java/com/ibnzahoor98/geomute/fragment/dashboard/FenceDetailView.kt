@@ -6,8 +6,15 @@ import android.provider.Settings
 import android.text.format.DateFormat
 import android.util.Log
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.marginBottom
+import androidx.core.view.marginLeft
+import androidx.core.view.marginRight
+import androidx.core.view.marginTop
+import com.google.android.gms.ads.AdListener
+import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -21,7 +28,9 @@ import com.google.firebase.auth.auth
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.firestore
 import com.ibnzahoor98.geomute.R
+import com.ibnzahoor98.geomute.SharedPrefs
 import com.ibnzahoor98.geomute.databinding.ActivityFenceDetailViewBinding
+import com.ibnzahoor98.geomute.helper.Ads
 
 class FenceDetailView : AppCompatActivity(), OnMapReadyCallback , View.OnClickListener  {
 
@@ -47,9 +56,49 @@ class FenceDetailView : AppCompatActivity(), OnMapReadyCallback , View.OnClickLi
         binding.idValue.text = intent.getStringExtra("fenceId")
       //  binding.muteModeValue.text = intent.getStringExtra("muteMode")
 
+        if (!SharedPrefs.isAdRemoved(this))
+        {
+
+            binding.adViewDetailFenceView.visibility = View.VISIBLE
+            Ads.requestMainActivityAd(binding.adViewDetailFenceView, this)
+            adFenceDetailviewActivityListener()
+
+        }else{
+
+        }
 
     }
 
+    fun adFenceDetailviewActivityListener(){
+        binding.adViewDetailFenceView.adListener = object: AdListener() {
+            override fun onAdClicked() {
+                // Code to be executed when the user clicks on an ad.
+            }
+
+            override fun onAdClosed() {
+                // Code to be executed when the user is about to return
+                // to the app after tapping on an ad.
+            }
+
+            override fun onAdFailedToLoad(adError : LoadAdError) {
+                // Code to be executed when an ad request fails.
+            }
+
+            override fun onAdImpression() {
+                // Code to be executed when an impression is recorded
+                // for an ad.
+            }
+
+            override fun onAdLoaded() {
+                // Code to be executed when an ad finishes loading.
+            }
+
+            override fun onAdOpened() {
+                // Code to be executed when an ad opens an overlay that
+                // covers the screen.
+            }
+        }
+    }
     fun convertDate(dateInMilliseconds: String, dateFormat: String?): String? {
         return DateFormat.format(dateFormat, dateInMilliseconds.toLong()).toString()
     }
